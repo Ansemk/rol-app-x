@@ -1,17 +1,17 @@
 {
-  "name": "lerna-typescript-cra-uilib-starter",
-  "version": "1.0.0",
-  "description": "Starter for Monorepos: Lerna, TypeScript, CRA and Storybook",
+  "name": "rol-app-x",
+  "version": "0.0.0",
+  "description": "Rol application x",
   "main": "index.js",
-  "repository": "https://github.com/shnydercom/lerna-typescript-cra-uilib-starter.git",
-  "author": "shnyder.com",
+  "repository": "https://github.com/Ansemk/rol-app-x.git",
+  "author": "David Cañamares",
   "license": "MIT",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
-    "lerna": "^3.18.3"
+    "lerna": "^3.20.2"
   },
   "scripts": {
     "story": "lerna run story --stream",
