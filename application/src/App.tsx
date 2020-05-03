@@ -1,8 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './assets/App.scss';
 import 'ui-lib';
-
 
 function App() {
   return (
@@ -12,7 +11,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <wd-button></wd-button>
+                    <wd-button></wd-button>
         <a
           className="App-link"
           href="https://reactjs.org"
