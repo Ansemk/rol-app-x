@@ -1,12 +1,14 @@
 {
   "name": "ui-lib",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "description": "Webcomponents ui-lib following open-wc recommendations",
   "author": "wd-button",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "lib/index.js",
-  "files":["lib"],
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "start": "es-dev-server --file-extensions .ts --node-resolve --babel --open --watch --app-index demo/index.html",
     "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
@@ -19,12 +21,11 @@
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "storybook": "start-storybook",
     "storybook:build": "build-storybook",
-    "tsc":"tsc"
+    "tsc": "tsc"
   },
-  
   "dependencies": {
-    "lit-html": "^1.1.2",
-    "lit-element": "^2.2.1"
+    "lit-element": "^2.2.1",
+    "lit-html": "^1.1.2"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
