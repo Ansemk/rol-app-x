@@ -1,4 +1,6 @@
-import { html, css, LitElement, customElement, property } from 'lit-element';
+import { html, css, LitElement, customElement, property, unsafeCSS } from 'lit-element';
+let WdButtonStyle = require('./WdButton.scss');
+
 
 @customElement('wd-button')
 export class WdButton extends LitElement {
@@ -8,13 +10,7 @@ export class WdButton extends LitElement {
 
 
   static get styles() {
-    return css`
-      :host {
-        display: block;
-        padding: 25px;
-        color: var(--wd-button-text-color, #000);
-      }
-    `;
+    return css`${unsafeCSS(WdButtonStyle)} `;
   }
 
   constructor() {
@@ -27,8 +23,9 @@ export class WdButton extends LitElement {
 
   render() {
     return html`
-      <h2>${this.title} Nr. ${this.counter}!</h2>
+      <h2>${this.title} OJO. ${this.counter}!</h2>
       <button @click=${this.__increment}>increment</button>
     `;
   }
 }
+
