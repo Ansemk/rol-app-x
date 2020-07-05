@@ -6,8 +6,12 @@
 </head>
 <body>
   <div id="demo"></div>
-  <wd-button title="cosas">
-  </wd-button>
+  <wd-input type="email">
+    <p slot="errorMsg" class="error-msg" >Ha ocurrido un error</p>
+  </wd-input>
+  <wd-input type="email" label="email" required="true">
+    <p slot="errorMsg" class="error-msg">Ha ocurrido un error</p>
+  </wd-input>
 
 </body>
 </html>

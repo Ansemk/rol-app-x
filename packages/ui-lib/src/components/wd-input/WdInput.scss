@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+}
+
+.d-none{
+    display: none;
+}
+
+:host {
+    display: inline-block;
+    width: 200px;
+    --success:rgb(161, 252, 158);
+    --error: rgb(248, 125, 125);
+    --default: #d6e6f2 ;
+
+}
+
+label {
+    position: absolute;
+    transform: translate(-194px, -10px);
+    background-color: white;
+    transition: all 0.3s;
+    z-index: 10;
+
+}
+.pristine,
+.pristine:valid,
+.pristine:required:invalid,
+.pristine:invalid{
+    border-left: 1px solid var(--default) ;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    padding: 8px;
+    border: 1px solid var(--default) ;
+    border-radius: 4px;
+    position: relative;
+    z-index: 5;
+    outline: none;
+
+    &:placeholder-shown~label {
+        color: grey;
+        transform: translate(-190px, 6px);
+        z-index: 1;
+    }
+
+    &:valid {
+        border-left: 2px solid var(--success);
+    }
+
+    &:required:invalid,
+    &:invalid {
+        border-left: 2px solid var(--error);
+    }
+
+
+
+    &:invalid~::slotted(.error-msg){
+        display: block;
+    }
+
+
+}
+::slotted(.error-msg){
+    display: none;
+    position: absolute;
+    color: var(--error);
+    font-size: 0.8rem;
+    margin: 0;
+    margin-top: 5px;
+    
+}
+
