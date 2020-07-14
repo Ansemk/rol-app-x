@@ -4,13 +4,14 @@
   "description": "Webcomponents ui-lib following open-wc recommendations",
   "author": "wd-button",
   "license": "MIT",
-  "main": "lib/index.js",
-  "module": "lib/index.js",
+  "main": "dist/bundle.js",
+  "module": "dist/bundle.js",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production",
     "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
     "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
