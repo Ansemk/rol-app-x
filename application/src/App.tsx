@@ -1,20 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
+import LoginPage from './components/LoginPage';
 import './assets/App.scss';
 import 'ui-lib';
 
+const arraySample = ['HOLA', 'ADIOS'];
+
 function App() {
+  const [array, setArray] = useState(arraySample);
+  const [userInput, setUserInput] = useState({
+    type: 'text',
+    error: 'Esto es un error',
+  });
+
+  useEffect(() => {
+    const userInputUpdate = {
+      type: 'email',
+      error: 'Esto es otro error',
+    };
+
+    setUserInput(userInputUpdate);
+  }, []); // de mome
+
   return (
     <div className="App">
-      <header className="App-header">
+      <section className="App-content">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-                    <wd-button></wd-button>
-                    <wd-input type="email">
-                      <p slot="errorMsg" className="error-msg" >Ha ocurrido un error</p>
-                    </wd-input>
+
+        {array.map((key) => (
+          <div key={key}>{key}</div>
+        ))}
+
+        <LoginPage></LoginPage>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -23,7 +40,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </section>
     </div>
   );
 }
