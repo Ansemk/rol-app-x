@@ -1,46 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Route, Link } from 'wouter';
 import logo from './logo.svg';
-import LoginPage from './components/LoginPage';
+import LoginPage from './pages/Login/index';
+import HomePage from './pages/Home/index';
 import './assets/App.scss';
 import 'ui-lib';
-
-const arraySample = ['HOLA', 'ADIOS'];
+import { UserContextProvider } from './context/UserContext';
 
 function App() {
-  const [array, setArray] = useState(arraySample);
-  const [userInput, setUserInput] = useState({
-    type: 'text',
-    error: 'Esto es un error',
-  });
-
-  useEffect(() => {
-    const userInputUpdate = {
-      type: 'email',
-      error: 'Esto es otro error',
-    };
-
-    setUserInput(userInputUpdate);
-  }, []); // de mome
-
   return (
     <div className="App">
-      <section className="App-content">
-        <img src={logo} className="App-logo" alt="logo" />
+      <UserContextProvider>
+        <section className="App-content">
+          <Route component={LoginPage} path="/login" />
+          <Route component={HomePage} path="/" />
 
-        {array.map((key) => (
-          <div key={key}>{key}</div>
-        ))}
-
-        <LoginPage></LoginPage>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </section>
+          <Link className="App-link" to="/">
+            <img src={logo} className="App-logo" alt="logo" />
+          </Link>
+        </section>
+      </UserContextProvider>
     </div>
   );
 }
