@@ -1,16 +1,15 @@
 export interface IUser {
+  username: string;
   name: string;
-  apellido: string;
+  surname: string;
+  age: number;
+
   // any other props that come into the component
 }
 
 export class User implements IUser {
-    
-  name: string = '';
-
-  apellido = '';
-
-  constructor({ name, apellido }: IUser) {
-    Object.assign(this, { name, apellido });
-  }
+  username = '';
+  name: string = 'Anónimo';
+  surname = '';
+  age = 999;
 }

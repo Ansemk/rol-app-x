@@ -1,0 +1,44 @@
+.login-page{
+    padding:16px 32px;
+    height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    &>div{
+        flex: 0 0 10vh;
+    }
+    &>main{
+        flex: 2 0 auto;
+        span{
+            font-size:22px;
+        }
+
+        h1{
+            font-size:64px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        p{
+            font-size:18px
+        }
+    }
+
+    form{
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        flex: 0 0 auto;
+    }
+    
+    wd-input{
+        margin-bottom: 32px;
+    }
+    button{
+        cursor:pointer;
+    }
+
+}
