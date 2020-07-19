@@ -1,5 +1,5 @@
 module.exports = {
-  stories: ['../src/**/*.stories.tsx'],
+  stories: ['../src/**/*.stories.js'],
   webpackFinal: async config => {
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
@@ -7,13 +7,27 @@ module.exports = {
         {
           loader: require.resolve('ts-loader'),
         },
-        // Optional
+      ],
+    });
+
+    config.module.rules.push({
+      test: /\.(s*)css$/,
+      use: ['to-string-loader', 'css-loader', 'sass-loader'],
+    });
+
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [
         {
-          loader: require.resolve('react-docgen-typescript-loader'),
+          loader: 'svg-url-loader',
+          options: {
+            limit: 10000,
+          },
         },
       ],
     });
+
     config.resolve.extensions.push('.ts', '.tsx');
     return config;
   },
-  };
+};

@@ -13,7 +13,7 @@ export function useGames({}) {
 
   useEffect(() => {
     setLoading(true);
-
+    console.log("hola")
     getGames({}).then((games) => {
       setGames(games);
       setLoading(false);

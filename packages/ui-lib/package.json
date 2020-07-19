@@ -37,6 +37,8 @@
     "@open-wc/eslint-config": "^2.0.0",
     "@open-wc/testing": "^2.0.0",
     "@open-wc/testing-karma": "^3.0.0",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/web-components": "^5.3.19",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
     "deepmerge": "^3.2.0",

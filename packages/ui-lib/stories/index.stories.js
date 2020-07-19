@@ -1,4 +1,5 @@
 import { html } from 'lit-html';
+import { action } from '@storybook/addon-actions';
 
 // import '../my-component.js';
 

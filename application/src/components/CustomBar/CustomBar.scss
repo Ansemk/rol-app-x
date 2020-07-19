@@ -1,0 +1,15 @@
+.custom-bar {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+
+  select {
+    border: none;
+    background: none;
+    opacity: 0.5;
+    font-size: 16px;
+    padding-right: 5px;
+    display: inline-block;
+    min-width: 20px;
+  }
+}
